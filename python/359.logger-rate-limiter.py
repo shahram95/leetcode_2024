@@ -15,12 +15,11 @@ class Logger:
         if message not in self._msg_dict:
             self._msg_dict[message] = timestamp
             return True
-        elif message in self._msg_dict and abs(timestamp-self._msg_dict[message]) >=10:
+        elif message in self._msg_dict and abs(self._msg_dict[message]-timestamp)>=10:
             self._msg_dict[message] = timestamp
             return True
         else:
             return False
-
 
 
 # Your Logger object will be instantiated and called as such:

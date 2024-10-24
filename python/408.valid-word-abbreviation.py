@@ -7,27 +7,27 @@
 # @lc code=start
 class Solution:
     def validWordAbbreviation(self, word: str, abbr: str) -> bool:
-        word_pointer = 0
-        abbr_pointer = 0
+        word_idx = 0
+        abbr_idx = 0
 
-        while word_pointer < len(word) and abbr_pointer < len(abbr):
-            if abbr[abbr_pointer].isdigit():
-                if abbr[abbr_pointer] == '0':
+        while word_idx < len(word) and abbr_idx < len(abbr):
+            if abbr[abbr_idx].isdigit():
+                if abbr[abbr_idx] == '0':
                     return False
-                
                 num = 0
 
-                while abbr_pointer < len(abbr) and abbr[abbr_pointer].isdigit():
-                    num = num*10 + int(abbr[abbr_pointer])
-                    abbr_pointer += 1
-                word_pointer += num
-            
+                while abbr_idx < len(abbr) and abbr[abbr_idx].isdigit():
+                    num = num*10 + int(abbr[abbr_idx])
+                    abbr_idx += 1
+                
+                word_idx += num
             else:
-                if word_pointer >= len(word) or word[word_pointer] != abbr[abbr_pointer]:
+                if word_idx > len(word) or word[word_idx] != abbr[abbr_idx]:
                     return False
-                word_pointer += 1
-                abbr_pointer += 1
-        return len(abbr) == abbr_pointer and len(word) == word_pointer
-
+                
+                word_idx += 1
+                abbr_idx += 1
+        
+        return word_idx == len(word) and abbr_idx == len(abbr)
 # @lc code=end
 

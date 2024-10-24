@@ -12,21 +12,17 @@ class Solution:
             5 : "Buzz"
         }
         out_lst = list()
-        divisors = mapping.keys()
 
         for i in range(1,n+1):
-            out_str = ""
-            for key in divisors:
-                if i%key == 0:
-                    out_str += mapping[key]
-            
-            if len(out_str) == 0:
-                out_str = str(i)
+            curr_str = ""
 
-            out_lst.append(out_str)
+            for key in mapping.keys():
+                if i%key == 0:
+                    curr_str += mapping[key]
+            
+            curr_str += str(i) if len(curr_str) == 0 else ""
+            out_lst.append(curr_str)
         
         return out_lst
-
-        
 # @lc code=end
 

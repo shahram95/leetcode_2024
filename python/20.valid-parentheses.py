@@ -7,13 +7,13 @@
 # @lc code=start
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = list()
-
         mapping = {
             ")" : "(",
             "]" : "[",
             "}" : "{"
         }
+
+        stack = list()
 
         for c in s:
             if c in mapping:

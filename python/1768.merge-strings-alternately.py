@@ -7,13 +7,13 @@
 # @lc code=start
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        out_str = ""
-        counter = min(len(word1), len(word2))
+        itr = min(len(word1), len(word2))
+        out  = ""
 
-        for idx in range(counter):
-            out_str += word1[idx]
-            out_str += word2[idx]
+        for idx in range(itr):
+            out += (word1[idx] + word2[idx])
         
-        return out_str + word1[counter:] + word2[counter:]
+        return out + word1[itr:] + word2[itr:]
+        
 # @lc code=end
 

@@ -10,16 +10,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        scanIdx = 0
+        scannedIdx = 0
         currIdx = 0
 
-        while scanIdx < len(nums):
-            if nums[currIdx] == 0:
-                nums.append(nums.pop(currIdx))
-            else:
+        while scannedIdx < len(nums):
+            if nums[currIdx] != 0:
                 currIdx += 1
-            scanIdx += 1
-            
+            else:
+                nums.append(nums.pop(currIdx))
+        
+            scannedIdx += 1
         
 # @lc code=end
 

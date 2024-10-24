@@ -10,31 +10,20 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-<<<<<<< HEAD
-=======
+        lp = m-1
+        rp = n-1
 
->>>>>>> july_24_branch
-        p1 = m - 1
-        p2 = n - 1
-        
         for idx in range(m+n-1, -1, -1):
-            if p2 < 0:
+            if rp < 0:
                 break
-<<<<<<< HEAD
-            elif p1 >= 0 and nums1[p1] > nums2[p2]:
-=======
-            if p1 >= 0 and nums1[p1] > nums2[p2]:
->>>>>>> july_24_branch
-                nums1[idx] = nums1[p1]
-                p1 -= 1
-            else:
-                nums1[idx] = nums2[p2]
-                p2 -= 1
-<<<<<<< HEAD
-                
-=======
 
->>>>>>> july_24_branch
+            if lp >= 0 and nums1[lp] > nums2[rp]:
+                nums1[idx] = nums1[lp]
+                lp -= 1
+            else:
+                nums1[idx] = nums2[rp]
+                rp -= 1
+            
         
 # @lc code=end
 

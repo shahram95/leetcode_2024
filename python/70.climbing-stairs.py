@@ -3,7 +3,6 @@
 #
 # [70] Climbing Stairs
 #
-from math import sqrt
 
 # @lc code=start
 class Solution:
@@ -11,8 +10,8 @@ class Solution:
         sqrt5 = sqrt(5)
         phi = (1+sqrt5)/2
         psi = (1-sqrt5)/2
-        count = int((phi**(n+1) - psi**(n+1))//sqrt5)
-        return count
+        count = ((phi)**(n+1) - (psi)**(n+1))/sqrt5
+        return int(count)
         
 # @lc code=end
 

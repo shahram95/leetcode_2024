@@ -11,12 +11,11 @@ class Solution:
         maxprofit = 0
 
         for price in prices:
-            if price < minprice:
+            if minprice > price:
                 minprice = price
             elif maxprofit < price - minprice:
                 maxprofit = price - minprice
         
         return maxprofit
-        
 # @lc code=end
 
